@@ -14,11 +14,32 @@ sw.getFriends().then(str => logging(str));
 function logging(str){
 var output = str;
 var names= [];
+var dict = {};
 for(var i=0; i < output.length ; i++){
-names.push(output[i].first_name);
+names.push(output[i].first_name + " " + output[i].last_name);
+dict[output[i].first_name + " " + output[i].last_name] = output[i].id
 }
-res.send(names);
+res.send(dict);
 }
+});
+app.get('/getfriend/:friend',function(req,res){
+var friend = req.params.friend;
+sw.getFriends().then(str => logging(str));
+function logging(str){
+var output = str;
+var names= [];
+var dict = {};
+for(var i=0; i < output.length ; i++){
+names.push(output[i].first_name + " " + output[i].last_name);
+name = (output[i].first_name + " " + output[i].last_name).toLowerCase();
+dict[output[i].first_name + " " + output[i].last_name] = output[i].id;
+if(name.indexOf(friend) > -1) {
+var friend_id = (output[i].id).toString();
+}
+}
+res.send(friend_id);
+}
+
 });
 var server = app.listen(8081, function () {
 
