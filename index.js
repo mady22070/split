@@ -1,7 +1,7 @@
 const Splitwise = require('splitwise');
 const sw = Splitwise({
-  consumerKey: 'JVA3RJN8s0IA91LXb3FxsKSCyh2Ugm08CidP4avP',
-  consumerSecret: 'ZBl9iOdsbTgb0HGeq26jN10LEZRGPz56mu4zku1g'
+  consumerKey: 'VA3RXb3FxsKSCyh2Ugm08CidP4avP',
+  consumerSecret: 'b0HGeq26jN10LEZRGPz56mu4zku1g'
 });
 
 var express = require('express');
